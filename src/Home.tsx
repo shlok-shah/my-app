@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Hero } from "./Interface/Herointerface";
 
-const Home = () => {
+const Home = (): JSX.Element => {
 
     const [heroes, setHeroes] = useState<Hero[] | null>(null)
 
@@ -17,14 +17,17 @@ const Home = () => {
 
     
         
-        return (heroes &&
-    (<div className="home">
+        return (
+            heroes ?
+    (
+    <div className="home">
         <h3>Top Heroes</h3>
         <Link to="/hero/1"><button>{heroes[0].name}</button></Link>
         <Link to="/hero/2"><button>{heroes[1].name}</button></Link>
         <Link to="/hero/3"><button>{heroes[2].name}</button></Link>
         <Link to="/hero/4"><button>{heroes[3].name}</button></Link>
-    </div>)
+    </div>
+    ) : <div> Not Available </div>
     )
     }
 

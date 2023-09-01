@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Navbar: React.FC = () => {
+const Navbar = (): JSX.Element => {
     return (
         <div className="navbar">
             <h2>Tour of Heroes</h2>

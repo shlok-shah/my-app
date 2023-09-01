@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {Hero} from "./Interface/Herointerface"
 
 
-const Heroes = () => {
+const Heroes = (): JSX.Element => {
 
     const [heroes, setHeroes] = useState<null | Hero[]>(null)
 
@@ -19,11 +19,12 @@ const Heroes = () => {
     return (
         <div className="hero-list">
             <h3>Hero List</h3>
+            
             {
-                heroes && (heroes.map((hero) => (
-                    <Link to={`/hero/${hero.id}`} key={hero.id}><div className="hero-list-element">{hero.name}</div></Link>
-                )))
-            }
+            heroes ? (heroes.map((hero) => (
+                <Link to={`/hero/${hero.id}`} key={hero.id}><div className="hero-list-element">{hero.name}</div></Link>
+            ))): <div>Not Available</div>
+}
         </div>
     );
 }

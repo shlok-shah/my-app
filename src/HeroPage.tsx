@@ -3,7 +3,7 @@ import { NavigateFunction, Params, useNavigate, useParams } from "react-router-d
 import { Link } from "react-router-dom";
 import {Hero} from "./Interface/Herointerface"
 
-const HeroPage = () => {
+const HeroPage = (): JSX.Element => {
 
     const [heroName, setHeroName] = useState<string | null>(null)
 
@@ -42,19 +42,21 @@ const HeroPage = () => {
     }
 
     return (
-        heroName && (<div className="hero-page">
-            <h2>Hero: {heroName}</h2>
-            <h3>id: {id}</h3>
-            <form>
-                <label>Hero name</label>
-                <input type="text" value={heroName} onChange={(e) => {setHeroName(e.target.value)}}></input>
-                <Link to="/">
-                    <button className="back-button" onClick={(e) => {handleUpdate(id!,e)}}>Back</button>
-                </Link>
-                
-            </form>
-        </div>)
-    );
+            heroName ? (
+                <div className="hero-page">
+                    <h2>Hero: {heroName}</h2>
+                    <h3>id: {id}</h3>
+                    <form>
+                        <label>Hero name</label>
+                        <input type="text" value={heroName} onChange={(e) => {setHeroName(e.target.value)}}></input>
+                        <Link to="/">
+                            <button className="back-button" onClick={(e) => {handleUpdate(id!,e)}}>Back</button>
+                        </Link>
+                        
+                    </form>
+                </div>
+            ): <div>Not Available</div>
+        )
 }
  
 export default HeroPage;
