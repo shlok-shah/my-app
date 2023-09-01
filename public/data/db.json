@@ -1,0 +1,48 @@
+{
+  "heroes": [
+    {
+      "name": "Hulk",
+      "id": 1
+    },
+    {
+      "name": "Iron Man 2",
+      "id": 2
+    },
+    {
+      "name": "Wonder Woman",
+      "id": 3
+    },
+    {
+      "name": "Batman 2",
+      "id": 4
+    },
+    {
+      "name": "Captain America",
+      "id": 5
+    },
+    {
+      "name": "Black Panther",
+      "id": 6
+    },
+    {
+      "name": "Iron Man",
+      "id": 7
+    },
+    {
+      "name": "Thor",
+      "id": 8
+    },
+    {
+      "name": "Wolverine",
+      "id": 9
+    },
+    {
+      "name": "Captain Marvel",
+      "id": 10
+    },
+    {
+      "name": "Dr. Strange",
+      "id": 11
+    }
+  ]
+}
